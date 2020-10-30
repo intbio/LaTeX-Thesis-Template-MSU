@@ -1726,6 +1726,12 @@
         <bcf:map_step map_field_set="media" map_field_value="text"/>
       </bcf:map>
     </bcf:maps>
+    <bcf:maps datatype="bibtex" level="user">
+      <bcf:map map_overwrite="1">
+        <bcf:per_datasource>biblio/author.bib</bcf:per_datasource>
+        <bcf:map_step map_field_set="addendum" map_null="1"/>
+      </bcf:map>
+    </bcf:maps>
     <bcf:maps datatype="bibtex" level="style">
       <bcf:map map_overwrite="1">
         <bcf:map_step map_field_source="author" map_match="(.+\s+and\s+){3,}|and\s+others\s*$" map_final="1"/>
@@ -3777,95 +3783,99 @@
   </bcf:section>
   <!-- SECTION 0 (cont.) -->
   <bcf:section number="0">
-    <bcf:citekey order="4">vakbib1</bcf:citekey>
-    <bcf:citekey order="4">vakbib2</bcf:citekey>
-    <bcf:citekey order="5">armeev_linking_2019</bcf:citekey>
-    <bcf:citekey order="6" nocite="1">hada_histone_2019</bcf:citekey>
-    <bcf:citekey order="7" nocite="1">shaytan_structural_2018</bcf:citekey>
-    <bcf:citekey order="8" nocite="1">shaytan_hydroxyl-radical_2017</bcf:citekey>
-    <bcf:citekey order="9" nocite="1">xiao_molecular_2017</bcf:citekey>
-    <bcf:citekey order="10" nocite="1">draizen_histonedb_2016</bcf:citekey>
-    <bcf:citekey order="11" nocite="1">el_kennani_ms_histonedb_2017</bcf:citekey>
-    <bcf:citekey order="12" nocite="1">shaytan_coupling_2016</bcf:citekey>
-    <bcf:citekey order="13" nocite="1">valieva_large-scale_2016</bcf:citekey>
-    <bcf:citekey order="14" nocite="1">gaykalova_structural_2015</bcf:citekey>
-    <bcf:citekey order="15" nocite="1">frank_direct_2015</bcf:citekey>
-    <bcf:citekey order="16" nocite="1">nishi_physicochemical_2014</bcf:citekey>
-    <bcf:citekey order="17" nocite="1">yolamanova_peptide_2013</bcf:citekey>
-    <bcf:citekey order="18" nocite="1">shaytan_self-assembling_2011</bcf:citekey>
-    <bcf:citekey order="19" nocite="1">shaytan_self-organizing_2011</bcf:citekey>
-    <bcf:citekey order="20" nocite="1">shaytan_large-scale_2010</bcf:citekey>
-    <bcf:citekey order="21" nocite="1">shaytan_free_2010</bcf:citekey>
-    <bcf:citekey order="22" nocite="1">shaytan_solvent_2009</bcf:citekey>
-    <bcf:citekey order="23" nocite="1">kasimova_voltage-gated_2014</bcf:citekey>
-    <bcf:citekey order="24" nocite="1">chang_analysis_2014</bcf:citekey>
-    <bcf:citekey order="25" nocite="1">sokolova_genome_2014</bcf:citekey>
-    <bcf:citekey order="26" nocite="1">armeev_analyzing_2019</bcf:citekey>
-    <bcf:citekey order="27" nocite="1">armeev_conformational_2015</bcf:citekey>
-    <bcf:citekey order="28" nocite="1">armeev_integrative_2020</bcf:citekey>
-    <bcf:citekey order="29">armeev_linking_2019</bcf:citekey>
-    <bcf:citekey order="30" nocite="1">armeev_modeling_2016</bcf:citekey>
-    <bcf:citekey order="31" nocite="1">armeev_molecular_2015</bcf:citekey>
-    <bcf:citekey order="32" nocite="1">armeev_nucleosome_2016</bcf:citekey>
-    <bcf:citekey order="33" nocite="1">armeev_python_2019</bcf:citekey>
-    <bcf:citekey order="34" nocite="1">bass_effect_2019</bcf:citekey>
-    <bcf:citekey order="35" nocite="1">biswas_genomic_2016</bcf:citekey>
-    <bcf:citekey order="36" nocite="1">bozdaganyan_comparative_2014</bcf:citekey>
-    <bcf:citekey order="37" nocite="1">chang_analysis_2014</bcf:citekey>
-    <bcf:citekey order="38" nocite="1">chang_pausing_2013</bcf:citekey>
-    <bcf:citekey order="39" nocite="1">chang_structural_2013</bcf:citekey>
-    <bcf:citekey order="40" nocite="1">chertkov_dual_2017</bcf:citekey>
-    <bcf:citekey order="41" nocite="1">draizen_histonedb_2016</bcf:citekey>
-    <bcf:citekey order="42" nocite="1">el_kennani_ms_histonedb_2017</bcf:citekey>
-    <bcf:citekey order="43" nocite="1">frank_direct_2015</bcf:citekey>
-    <bcf:citekey order="44" nocite="1">gaykalova_structural_2015</bcf:citekey>
-    <bcf:citekey order="45" nocite="1">goncearenco_structural_2015</bcf:citekey>
-    <bcf:citekey order="46" nocite="1">gorkovets_joint_2018</bcf:citekey>
-    <bcf:citekey order="47" nocite="1">gorkovets_mutual_2018</bcf:citekey>
-    <bcf:citekey order="48" nocite="1">gribkova_construction_2019</bcf:citekey>
-    <bcf:citekey order="49" nocite="1">gribkova_investigation_2017</bcf:citekey>
-    <bcf:citekey order="50" nocite="1">hada_histone_2019</bcf:citekey>
-    <bcf:citekey order="51" nocite="1">kasimova_investigation_2014</bcf:citekey>
-    <bcf:citekey order="52" nocite="1">kasimova_molecular_2014</bcf:citekey>
-    <bcf:citekey order="53" nocite="1">kasimova_voltage-gated_2014</bcf:citekey>
-    <bcf:citekey order="54" nocite="1">levtsova_molecular_2009</bcf:citekey>
-    <bcf:citekey order="55" nocite="1">lyubitelev_structure_2016</bcf:citekey>
-    <bcf:citekey order="56" nocite="1">nikolaev_dynamics_2010</bcf:citekey>
-    <bcf:citekey order="57" nocite="1">nikolaev_vzaimodeistvie_2010</bcf:citekey>
-    <bcf:citekey order="58" nocite="1">nishi_physicochemical_2014</bcf:citekey>
-    <bcf:citekey order="59" nocite="1">orekhov_calculation_2012</bcf:citekey>
-    <bcf:citekey order="60" nocite="1">shaitan_dynamics_2016</bcf:citekey>
-    <bcf:citekey order="61" nocite="1">shaitan_influence_2013</bcf:citekey>
-    <bcf:citekey order="62" nocite="1">shaytan_combined_2015</bcf:citekey>
-    <bcf:citekey order="63" nocite="1">shaytan_coupling_2016</bcf:citekey>
-    <bcf:citekey order="64" nocite="1">shaytan_free_2010</bcf:citekey>
-    <bcf:citekey order="65" nocite="1">shaytan_hydroxyl-radical_2017</bcf:citekey>
-    <bcf:citekey order="66" nocite="1">shaytan_large-scale_2010</bcf:citekey>
-    <bcf:citekey order="67" nocite="1">shaytan_microsecond_2017</bcf:citekey>
-    <bcf:citekey order="68" nocite="1">shaytan_molekularnaya_2005</bcf:citekey>
-    <bcf:citekey order="69" nocite="1">shaytan_neravnovesnaya_2006</bcf:citekey>
-    <bcf:citekey order="70" nocite="1">shaytan_nucleosome_2015</bcf:citekey>
-    <bcf:citekey order="71" nocite="1">shaytan_nucleosome_2016</bcf:citekey>
-    <bcf:citekey order="72" nocite="1">shaytan_polymorphism_2015</bcf:citekey>
-    <bcf:citekey order="73" nocite="1">shaytan_self-assembling_2011</bcf:citekey>
-    <bcf:citekey order="74" nocite="1">shaytan_self-organizing_2011</bcf:citekey>
-    <bcf:citekey order="75" nocite="1">shaytan_solvent_2009</bcf:citekey>
-    <bcf:citekey order="76" nocite="1">shaytan_structural_2018</bcf:citekey>
-    <bcf:citekey order="77" nocite="1">shaytan_trajectories_2016</bcf:citekey>
-    <bcf:citekey order="78" nocite="1">sokolova_genome_2014</bcf:citekey>
-    <bcf:citekey order="79" nocite="1">valieva_large-scale_2016</bcf:citekey>
-    <bcf:citekey order="80" nocite="1">xiao_molecular_2017</bcf:citekey>
-    <bcf:citekey order="81" nocite="1">yolamanova_peptide_2013</bcf:citekey>
-    <bcf:citekey order="82" nocite="1">shaytan_thesis_kfmn_2010</bcf:citekey>
-    <bcf:citekey order="83" nocite="1">shaytan_thesis_ulm_2012</bcf:citekey>
-    <bcf:citekey order="84" nocite="1">armeev_abstract_2019</bcf:citekey>
-    <bcf:citekey order="85" nocite="1">armeev_modelirovanie_2013</bcf:citekey>
-    <bcf:citekey order="86" nocite="1">bass_abstract_2019</bcf:citekey>
-    <bcf:citekey order="87" nocite="1">greshnova_sinteticheskaya_2019</bcf:citekey>
-    <bcf:citekey order="88" nocite="1">shaytan_dinamicheskiy_2006</bcf:citekey>
-    <bcf:citekey order="89" nocite="1">shaytan_peptide_2006</bcf:citekey>
-    <bcf:citekey order="90" nocite="1">shaytan_supercomputernoe_2009</bcf:citekey>
-    <bcf:citekey order="91" nocite="1">shaytan_water_2014</bcf:citekey>
+    <bcf:citekey order="4">armeev_linking_2019</bcf:citekey>
+    <bcf:citekey order="5" nocite="1">hada_histone_2019</bcf:citekey>
+    <bcf:citekey order="6" nocite="1">shaytan_structural_2018</bcf:citekey>
+    <bcf:citekey order="7" nocite="1">shaytan_hydroxyl-radical_2017</bcf:citekey>
+    <bcf:citekey order="8" nocite="1">xiao_molecular_2017</bcf:citekey>
+    <bcf:citekey order="9" nocite="1">draizen_histonedb_2016</bcf:citekey>
+    <bcf:citekey order="10" nocite="1">el_kennani_ms_histonedb_2017</bcf:citekey>
+    <bcf:citekey order="11" nocite="1">shaytan_coupling_2016</bcf:citekey>
+    <bcf:citekey order="12" nocite="1">valieva_large-scale_2016</bcf:citekey>
+    <bcf:citekey order="13" nocite="1">gaykalova_structural_2015</bcf:citekey>
+    <bcf:citekey order="14" nocite="1">frank_direct_2015</bcf:citekey>
+    <bcf:citekey order="15" nocite="1">nishi_physicochemical_2014</bcf:citekey>
+    <bcf:citekey order="16" nocite="1">yolamanova_peptide_2013</bcf:citekey>
+    <bcf:citekey order="17" nocite="1">shaytan_self-assembling_2011</bcf:citekey>
+    <bcf:citekey order="18" nocite="1">shaytan_self-organizing_2011</bcf:citekey>
+    <bcf:citekey order="19" nocite="1">shaytan_large-scale_2010</bcf:citekey>
+    <bcf:citekey order="20" nocite="1">shaytan_free_2010</bcf:citekey>
+    <bcf:citekey order="21" nocite="1">shaytan_solvent_2009</bcf:citekey>
+    <bcf:citekey order="22" nocite="1">kasimova_voltage-gated_2014</bcf:citekey>
+    <bcf:citekey order="23" nocite="1">chang_analysis_2014</bcf:citekey>
+    <bcf:citekey order="24" nocite="1">sokolova_genome_2014</bcf:citekey>
+    <bcf:citekey order="25" nocite="1">armeev_analyzing_2019</bcf:citekey>
+    <bcf:citekey order="26" nocite="1">armeev_conformational_2015</bcf:citekey>
+    <bcf:citekey order="27" nocite="1">armeev_integrative_2020</bcf:citekey>
+    <bcf:citekey order="28">armeev_linking_2019</bcf:citekey>
+    <bcf:citekey order="29" nocite="1">armeev_modeling_2016</bcf:citekey>
+    <bcf:citekey order="30" nocite="1">armeev_molecular_2015</bcf:citekey>
+    <bcf:citekey order="31" nocite="1">armeev_nucleosome_2016</bcf:citekey>
+    <bcf:citekey order="32" nocite="1">armeev_python_2019</bcf:citekey>
+    <bcf:citekey order="33" nocite="1">bass_effect_2019</bcf:citekey>
+    <bcf:citekey order="34" nocite="1">biswas_genomic_2016</bcf:citekey>
+    <bcf:citekey order="35" nocite="1">bozdaganyan_comparative_2014</bcf:citekey>
+    <bcf:citekey order="36" nocite="1">chang_analysis_2014</bcf:citekey>
+    <bcf:citekey order="37" nocite="1">chang_pausing_2013</bcf:citekey>
+    <bcf:citekey order="38" nocite="1">chang_structural_2013</bcf:citekey>
+    <bcf:citekey order="39" nocite="1">chertkov_dual_2017</bcf:citekey>
+    <bcf:citekey order="40" nocite="1">draizen_histonedb_2016</bcf:citekey>
+    <bcf:citekey order="41" nocite="1">el_kennani_ms_histonedb_2017</bcf:citekey>
+    <bcf:citekey order="42" nocite="1">frank_direct_2015</bcf:citekey>
+    <bcf:citekey order="43" nocite="1">gaykalova_structural_2015</bcf:citekey>
+    <bcf:citekey order="44" nocite="1">goncearenco_structural_2015</bcf:citekey>
+    <bcf:citekey order="45" nocite="1">gorkovets_joint_2018</bcf:citekey>
+    <bcf:citekey order="46" nocite="1">gorkovets_mutual_2018</bcf:citekey>
+    <bcf:citekey order="47" nocite="1">gribkova_construction_2019</bcf:citekey>
+    <bcf:citekey order="48" nocite="1">gribkova_investigation_2017</bcf:citekey>
+    <bcf:citekey order="49" nocite="1">hada_histone_2019</bcf:citekey>
+    <bcf:citekey order="50" nocite="1">kasimova_investigation_2014</bcf:citekey>
+    <bcf:citekey order="51" nocite="1">kasimova_molecular_2014</bcf:citekey>
+    <bcf:citekey order="52" nocite="1">kasimova_voltage-gated_2014</bcf:citekey>
+    <bcf:citekey order="53" nocite="1">levtsova_molecular_2009</bcf:citekey>
+    <bcf:citekey order="54" nocite="1">lyubitelev_structure_2016</bcf:citekey>
+    <bcf:citekey order="55" nocite="1">nikolaev_dynamics_2010</bcf:citekey>
+    <bcf:citekey order="56" nocite="1">nikolaev_vzaimodeistvie_2010</bcf:citekey>
+    <bcf:citekey order="57" nocite="1">nishi_physicochemical_2014</bcf:citekey>
+    <bcf:citekey order="58" nocite="1">orekhov_calculation_2012</bcf:citekey>
+    <bcf:citekey order="59" nocite="1">shaitan_dynamics_2016</bcf:citekey>
+    <bcf:citekey order="60" nocite="1">shaitan_influence_2013</bcf:citekey>
+    <bcf:citekey order="61" nocite="1">shaytan_combined_2015</bcf:citekey>
+    <bcf:citekey order="62" nocite="1">shaytan_coupling_2016</bcf:citekey>
+    <bcf:citekey order="63" nocite="1">shaytan_free_2010</bcf:citekey>
+    <bcf:citekey order="64" nocite="1">shaytan_hydroxyl-radical_2017</bcf:citekey>
+    <bcf:citekey order="65" nocite="1">shaytan_large-scale_2010</bcf:citekey>
+    <bcf:citekey order="66" nocite="1">shaytan_microsecond_2017</bcf:citekey>
+    <bcf:citekey order="67" nocite="1">shaytan_molekularnaya_2005</bcf:citekey>
+    <bcf:citekey order="68" nocite="1">shaytan_neravnovesnaya_2006</bcf:citekey>
+    <bcf:citekey order="69" nocite="1">shaytan_nucleosome_2015</bcf:citekey>
+    <bcf:citekey order="70" nocite="1">shaytan_nucleosome_2016</bcf:citekey>
+    <bcf:citekey order="71" nocite="1">shaytan_polymorphism_2015</bcf:citekey>
+    <bcf:citekey order="72" nocite="1">shaytan_self-assembling_2011</bcf:citekey>
+    <bcf:citekey order="73" nocite="1">shaytan_self-organizing_2011</bcf:citekey>
+    <bcf:citekey order="74" nocite="1">shaytan_solvent_2009</bcf:citekey>
+    <bcf:citekey order="75" nocite="1">shaytan_structural_2018</bcf:citekey>
+    <bcf:citekey order="76" nocite="1">shaytan_trajectories_2016</bcf:citekey>
+    <bcf:citekey order="77" nocite="1">sokolova_genome_2014</bcf:citekey>
+    <bcf:citekey order="78" nocite="1">valieva_large-scale_2016</bcf:citekey>
+    <bcf:citekey order="79" nocite="1">xiao_molecular_2017</bcf:citekey>
+    <bcf:citekey order="80" nocite="1">yolamanova_peptide_2013</bcf:citekey>
+    <bcf:citekey order="81" nocite="1">shaytan_thesis_kfmn_2010</bcf:citekey>
+    <bcf:citekey order="82" nocite="1">shaytan_thesis_ulm_2012</bcf:citekey>
+    <bcf:citekey order="83" nocite="1">armeev_abstract_2019</bcf:citekey>
+    <bcf:citekey order="84" nocite="1">armeev_modelirovanie_2013</bcf:citekey>
+    <bcf:citekey order="85" nocite="1">bass_abstract_2019</bcf:citekey>
+    <bcf:citekey order="86" nocite="1">greshnova_sinteticheskaya_2019</bcf:citekey>
+    <bcf:citekey order="87" nocite="1">shaytan_dinamicheskiy_2006</bcf:citekey>
+    <bcf:citekey order="88" nocite="1">shaytan_peptide_2006</bcf:citekey>
+    <bcf:citekey order="89" nocite="1">shaytan_supercomputernoe_2009</bcf:citekey>
+    <bcf:citekey order="90" nocite="1">shaytan_water_2014</bcf:citekey>
+    <bcf:citekey order="91">adamcik_understanding_2010</bcf:citekey>
+    <bcf:citekey order="92">adhikari_chromosome3d:_2016</bcf:citekey>
+    <bcf:citekey order="93">adamcik_understanding_2010</bcf:citekey>
+    <bcf:citekey order="93">adhikari_chromosome3d:_2016</bcf:citekey>
+    <bcf:citekey order="94">armeev_abstract_2019</bcf:citekey>
+    <bcf:citekey order="94">armeev_analyzing_2019</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
@@ -3884,7 +3894,16 @@
                 labelalphanametemplatename="global">
   </bcf:datalist>
   <bcf:datalist section="0"
-                name="none/global//global/global"
+                name="none/global/7FC56270E7A70FA81A5935B72EACBE29/global/global"
+                type="entry"
+                sortingtemplatename="none"
+                sortingnamekeytemplatename="global"
+                labelprefix="A"
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
+  <bcf:datalist section="0"
+                name="none/global/D41D8CD98F00B204E9800998ECF8427E/global/global"
                 type="entry"
                 sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
@@ -3893,7 +3912,7 @@
                 labelalphanametemplatename="global">
   </bcf:datalist>
   <bcf:datalist section="0"
-                name="none/global/D41D8CD98F00B204E9800998ECF8427E/global/global"
+                name="none/global//global/global"
                 type="entry"
                 sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
