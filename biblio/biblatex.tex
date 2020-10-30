@@ -14,8 +14,9 @@ autolang=other,% многоязычная библиография
 clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
 defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
 sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
-doi=false,% Показывать или нет ссылки на DOI
-isbn=false,% Показывать или нет ISBN, ISSN, ISRN
+%doi=false,% Показывать или нет ссылки на DOI
+%isbn=false,% Показывать или нет ISBN, ISSN, ISRN
+url=false
 ]{biblatex}[2016/09/17]
 \ltx@iffilelater{biblatex-gost.def}{2017/05/03}%
 {\toggletrue{bbx:gostbibliography}%
@@ -129,7 +130,7 @@ sorting=none,% настройка сортировки списка литера
 %%% Подключение файлов bib %%%
 \addbibresource[label=bl-external]{biblio/external.bib}
 \addbibresource[label=bl-author]{biblio/author.bib}
-\addbibresource[label=bl-registered]{biblio/registered.bib}
+ \addbibresource[label=bl-registered]{biblio/registered.bib}
 
 %http://tex.stackexchange.com/a/141831/79756
 %There is a way to automatically map the language field to the langid field. The following lines in the preamble should be enough to do that.
@@ -172,25 +173,40 @@ sorting=none,% настройка сортировки списка литера
             \step[fieldsource=abstract]
             \step[fieldset=abstract,null]
         }
+        % \map[overwrite]{% стираем значения поля ids - у Zotero через BetterBibtex там появляются символы \ которые не нравятся Latex
+        %     \step[fieldsource=ids]
+        %     \step[fieldset=ids,null]
+        % }
         \map[overwrite]{ % переделка формата записи даты
             \step[fieldsource=urldate,
             match=\regexp{([0-9]{2})\.([0-9]{2})\.([0-9]{4})},
             replace={$3-$2-$1$4}, % $4 вставлен исключительно ради нормальной работы программ подсветки синтаксиса, которые некорректно обрабатывают $ в таких конструкциях
             final]
         }
-        \map[overwrite]{ % стираем ключевые слова
-            \step[fieldsource=keywords]
-            \step[fieldset=keywords,null]
-        }
+       % \map[overwrite]{ % стираем ключевые слова %Modified by AKSh 30.10.2020 - НЕ СТИРАЕМ ИХ мы будет использоать ключевые слова из библиографии
+       %    \step[fieldsource=keywords]
+       %     \step[fieldset=keywords,null]
+       % }
         % реализация foreach различается для biblatex v3.12 и v3.13.
         % Для версии v3.13 эта конструкция заменяет последующие 7 структур map
         % \map[overwrite,foreach={authorvak,authorscopus,authorwos,authorconf,authorother,authorparent,authorprogram}]{ % записываем информацию о типе публикации в ключевые слова
-        %     \step[fieldsource=$MAPLOOP,final=true]
+        %     \step[f+ieldsource=$MAPLOOP,final=true]
         %     \step[fieldset=keywords,fieldvalue={,biblio$MAPLOOP},append=true]
         % }
         \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
-            \step[fieldsource=authorvak,final=true]
+           % \step[fieldsource=authorvak,final=true] %Modified by AKSh 30.10.2020
+            \step[fieldsource=keywords,match=\regexp{(^|,)vak($|,)},final] %Modified by AKSh 30.10.2020
             \step[fieldset=keywords,fieldvalue={,biblioauthorvak},append=true]
+        }
+        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+           % \step[fieldsource=authorvak,final=true] %Modified by AKSh 30.10.2020
+            \step[fieldsource=keywords,match=\regexp{(^|,)abstract($|,)},final] %Modified by AKSh 30.10.2020
+            \step[fieldset=keywords,fieldvalue={,biblioauthorconf},append=true]
+        }
+        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+           % \step[fieldsource=authorvak,final=true] %Modified by AKSh 30.10.2020
+            \step[fieldsource=keywords,match=\regexp{(^|,)article($|,)},final] %Modified by AKSh 30.10.2020
+            \step[fieldset=keywords,fieldvalue={,biblioauthorarticle},append=true]
         }
         \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
             \step[fieldsource=authorscopus,final=true]
@@ -208,14 +224,14 @@ sorting=none,% настройка сортировки списка литера
             \step[fieldsource=authorother,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorother},append=true]
         }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
-            \step[fieldsource=authorpatent,final=true]
-            \step[fieldset=keywords,fieldvalue={,biblioauthorpatent},append=true]
-        }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
-            \step[fieldsource=authorprogram,final=true]
-            \step[fieldset=keywords,fieldvalue={,biblioauthorprogram},append=true]
-        }
+      \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+         \step[fieldsource=authorpatent,final=true]
+       \step[fieldset=keywords,fieldvalue={,biblioauthorpatent},append=true]
+   }
+    \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+         \step[fieldsource=authorprogram,final=true]
+        \step[fieldset=keywords,fieldvalue={,biblioauthorprogram},append=true]
+    }
         \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
             \perdatasource{biblio/external.bib}
             \step[fieldset=keywords, fieldvalue={,biblioexternal},append=true]
@@ -224,10 +240,10 @@ sorting=none,% настройка сортировки списка литера
             \perdatasource{biblio/author.bib}
             \step[fieldset=keywords, fieldvalue={,biblioauthor},append=true]
         }
-        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
-            \perdatasource{biblio/registered.bib}
-            \step[fieldset=keywords, fieldvalue={,biblioregistered},append=true]
-        }
+ \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
+        \perdatasource{biblio/registered.bib}
+       \step[fieldset=keywords, fieldvalue={,biblioregistered},append=true]
+   }
         \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
             \step[fieldset=keywords, fieldvalue={,bibliofull},append=true]
         }
@@ -340,7 +356,7 @@ sorting=none,% настройка сортировки списка литера
 }
 
 \defbibfilter{papersregistered}{%
-    keyword=biblioauthor or keyword=biblioregistered
+    keyword=biblioauthor or keyword=biblioregistered or keyword=thesis %Modified by AKSh
 }
 
 %%% Убираем неразрывные пробелы перед двоеточием и точкой с запятой %%%
@@ -513,6 +529,12 @@ sorting=none,% настройка сортировки списка литера
         {}
         {\stepcounter{citeauthorconf}}
 
+    \newtotcounter{citeauthorarticle} %Added by AKSh
+    \defbibenvironment{countauthorarticle}
+        {\setcounter{citeauthorarticle}{0}\renewcommand{\blx@driver}[1]{}}
+        {}
+        {\stepcounter{citeauthorarticle}}
+
     \newtotcounter{citeauthor}
     \defbibenvironment{countauthor}
         {\setcounter{citeauthor}{0}\renewcommand{\blx@driver}[1]{}}
@@ -531,22 +553,22 @@ sorting=none,% настройка сортировки списка литера
         {}
         {\stepcounter{citeauthorscopuswos}}
 
-    \newtotcounter{citeregistered}
-    \defbibenvironment{countregistered}
-        {\setcounter{citeregistered}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeregistered}}
+  \newtotcounter{citeregistered}
+ \defbibenvironment{countregistered}
+     {\setcounter{citeregistered}{0}\renewcommand{\blx@driver}[1]{}}
+    {}
+    {\stepcounter{citeregistered}}
 
     \newtotcounter{citeauthorpatent}
     \defbibenvironment{countauthorpatent}
-        {\setcounter{citeauthorpatent}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorpatent}}
+       {\setcounter{citeauthorpatent}{0}\renewcommand{\blx@driver}[1]{}}
+       {}
+       {\stepcounter{citeauthorpatent}}
 
-    \newtotcounter{citeauthorprogram}
-    \defbibenvironment{countauthorprogram}
-        {\setcounter{citeauthorprogram}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
+  \newtotcounter{citeauthorprogram}
+  \defbibenvironment{countauthorprogram}
+       {\setcounter{citeauthorprogram}{0}\renewcommand{\blx@driver}[1]{}}
+      {}
         {\stepcounter{citeauthorprogram}}
 
     \newtotcounter{citeexternal}
@@ -621,11 +643,13 @@ sorting=none,% настройка сортировки списка литера
     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]% Работы автора, индексируемые Web of Science
     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]% Работы автора, индексируемые Scopus
     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorpatent, title=\bibtitleauthorpatent,resetnumbers=false]% Патенты
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorprogram,title=\bibtitleauthorprogram,resetnumbers=false]% Программы для ЭВМ
+     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorprogram,title=\bibtitleauthorprogram,resetnumbers=false]% Программы для ЭВМ
     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]% Тезисы конференций
     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]% Прочие работы автора
 }
 
 \newcommand*{\insertbiblioexternal}{
-    \printbibliography[heading=pubgroup,    section=0, keyword=biblioexternal,     title=\bibtitlefull]
+    % AKSh испревлено чтобы  в counter считать ссылки \printbibliography[heading=pubgroup,    section=0,  keyword=biblioexternal,     title=\bibtitlefull]
+    \printbibliography[heading=pubgroup,  section=0,  keyword=biblioexternal,     title=\bibtitlefull]
+
 }

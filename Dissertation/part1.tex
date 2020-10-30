@@ -7,50 +7,50 @@
 \section{Ссылки}\label{sec:ch1/sec2}
 
 Сошлёмся на библиографию.
-Одна ссылка: \cite[с.~54]{Sokolov}\cite[с.~36]{Gaidaenko}.
-Две ссылки: \cite{Sokolov,Gaidaenko}.
-Ссылка на собственные работы: \cite{vakbib1, confbib2}.
-Много ссылок: %\cite[с.~54]{Lermontov,Management,Borozda} % такой «фокус»
+Одна ссылка: \cite[с.~54]{adamcik_understanding_2010}\cite[с.~36]{adhikari_chromosome3d:_2016}.
+Две ссылки: \cite{adamcik_understanding_2010,adhikari_chromosome3d:_2016}.
+Ссылка на собственные работы: \cite{armeev_abstract_2019, armeev_analyzing_2019}.
+Много ссылок:% \cite[с.~54]{Lermontov,Management,Borozda} % такой «фокус»
 %вызывает biblatex warning относительно опции sortcites, потому что неясно, к
 %какому источнику относится уточнение о страницах, а bibtex об этой проблеме
 %даже не предупреждает
-\cite{Lermontov, Management, Borozda, Marketing, Constitution, FamilyCode,
-Gost.7.0.53, Razumovski, Lagkueva, Pokrovski, Methodology, Berestova,
-Kriger}%
-\ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
-    \cite{Sirotko, Lukina, Encyclopedia, Nasirova}%
-}{% Примеры для biblatex через движок biber
-    \cite{Sirotko2, Lukina2, Encyclopedia2, Nasirova2}%
-}%
+% \cite{Lermontov, Management, Borozda, Marketing, Constitution, FamilyCode,
+% Gost.7.0.53, Razumovski, Lagkueva, Pokrovski, Methodology, Berestova,
+% Kriger}%
+% \ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
+%     \cite{Sirotko, Lukina, Encyclopedia, Nasirova}%
+% }{% Примеры для biblatex через движок biber
+%     \cite{Sirotko2, Lukina2, Encyclopedia2, Nasirova2}%
+% }%
 .
-И~ещё немного ссылок:~\cite{Article,Book,Booklet,Conference,Inbook,Incollection,Manual,Mastersthesis,
-Misc,Phdthesis,Proceedings,Techreport,Unpublished}
-% Следует обратить внимание, что пробел после запятой внутри \cite{}
-% обрабатывается ожидаемо, а пробел перед запятой, может вызывать проблемы при
-% обработке ссылок.
-\cite{medvedev2006jelektronnye, CEAT:CEAT581, doi:10.1080/01932691.2010.513279,
-Gosele1999161,Li2007StressAnalysis, Shoji199895, test:eisner-sample,
-test:eisner-sample-shorted, AB_patent_Pomerantz_1968, iofis_patent1960}
-\ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
-}{% Примеры для biblatex через движок biber
-    \cite{patent2h, patent3h, patent2}%
-}%
-.
+% И~ещё немного ссылок:~\cite{Article,Book,Booklet,Conference,Inbook,Incollection,Manual,Mastersthesis,
+% Misc,Phdthesis,Proceedings,Techreport,Unpublished}
+% % Следует обратить внимание, что пробел после запятой внутри \cite{}
+% % обрабатывается ожидаемо, а пробел перед запятой, может вызывать проблемы при
+% % обработке ссылок.
+% \cite{medvedev2006jelektronnye, CEAT:CEAT581, doi:10.1080/01932691.2010.513279,
+% Gosele1999161,Li2007StressAnalysis, Shoji199895, test:eisner-sample,
+% test:eisner-sample-shorted, AB_patent_Pomerantz_1968, iofis_patent1960}
+% \ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
+% }{% Примеры для biblatex через движок biber
+%     \cite{patent2h, patent3h, patent2}%
+% }%
+% .
 
-\ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
-Попытка реализовать несколько ссылок на конкретные страницы
-для \texttt{bibtex} реализации библиографии:
-[\citenum{Sokolov}, с.~54; \citenum{Gaidaenko}, с.~36].
-}{% Примеры для biblatex через движок biber
-Несколько источников (мультицитата):
-% Тут специально написано по-разному тире, для демонстрации, что
-% применение специальных тире в настоящий момент в biblatex приводит к непоказу
-% "с.".
-\cites[vii--x, 5, 7]{Sokolov}[v"--~x, 25, 526]{Gaidaenko}[vii--x, 5, 7]{Techreport},
-работает только в \texttt{biblatex} реализации библиографии.
-}%
+% \ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
+% Попытка реализовать несколько ссылок на конкретные страницы
+% для \texttt{bibtex} реализации библиографии:
+% [\citenum{adamcik_understanding_2010}, с.~54; \citenum{adhikari_chromosome3d:_2016}, с.~36].
+% }{% Примеры для biblatex через движок biber
+% Несколько источников (мультицитата):
+% % Тут специально написано по-разному тире, для демонстрации, что
+% % применение специальных тире в настоящий момент в biblatex приводит к непоказу
+% % "с.".
+% \cites[vii--x, 5, 7]{adamcik_understanding_2010}[v"--~x, 25, 526]{adhikari_chromosome3d:_2016}[vii--x, 5, 7]{adilakshmi_hydroxyl_2006},
+% работает только в \texttt{biblatex} реализации библиографии.
+% }%
 
-Ссылки на собственные работы:~\cite{vakbib1, confbib1}
+Ссылки на собственные работы:%~\cite{vakbib1, confbib1}
 
 Сошлёмся на приложения: Приложение~\cref{app:A}, Приложение~\cref{app:B2}.
 

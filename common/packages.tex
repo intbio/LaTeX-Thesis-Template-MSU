@@ -18,6 +18,8 @@
 \usepackage{comment}    % Позволяет убирать блоки текста (добавляет
                         % окружение comment и команду \excludecomment)
 
+                       
+
 %%% Поля и разметка страницы %%%
 \usepackage{pdflscape}  % Для включения альбомных страниц
 \usepackage{geometry}   % Для последующего задания полей
@@ -40,6 +42,13 @@
     separate-uncertainty,
     ]{siunitx}                      % Размерности SI
 \sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
+
+
+
+%Пользовательские насройки и доппакеты
+\DeclareMathOperator{\erfc}{erfc} %Added by AkSh 1.10.2020
+\usepackage{tabularx} %Added by Aksh 2.10.2020
+
 
 % Кириллица в нумерации subequations
 % Для правильной работы требуется выполнение сразу после загрузки пакетов
@@ -152,7 +161,7 @@
 
 %%% Изображения %%%
 \usepackage{graphicx}[2014/04/25]   % Подключаем пакет работы с графикой
-\usepackage{caption}                % Подписи рисунков и таблиц
+\usepackage[labelfont=bf]{caption}                % Подписи рисунков и таблиц %labelfont=bf Added by AKSh
 \usepackage{subcaption}             % Подписи подрисунков и подтаблиц
 \usepackage{pdfpages}               % Добавление внешних pdf файлов
 

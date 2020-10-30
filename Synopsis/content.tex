@@ -14,8 +14,11 @@
 \newcommand{\probation}{\pdfbookmark[1]{Апробация}{probation}\underline{\textbf{\probationTXT}}}
 \newcommand{\contribution}{\pdfbookmark[1]{Личный вклад}{contribution}\underline{\textbf{\contributionTXT}}}
 \newcommand{\publications}{\pdfbookmark[1]{Публикации}{publications}\underline{\textbf{\publicationsTXT}}}
+\newcommand{\acknowledge}{\pdfbookmark[1]{Благодарности}{acknowledge}\underline{\textbf{\acknowledgeTXT}}}
 
 \input{common/characteristic} % Характеристика работы по структуре во введении и в автореферате не отличается (ГОСТ Р 7.0.11, пункты 5.3.1 и 9.2.1), потому её загружаем из одного и того же внешнего файла, предварительно задав форму выделения некоторым параметрам
+
+
 
 %Диссертационная работа была выполнена при поддержке грантов \dots
 
@@ -23,6 +26,23 @@
 %четырех глав, заключения и~приложения. Полный объем диссертации
 %\textbf{ХХХ}~страниц текста с~\textbf{ХХ}~рисунками и~5~таблицами. Список
 %литературы содержит \textbf{ХХX}~наименование.
+
+% \textbf{Объем и структура работы.} Диссертация состоит из~введения,
+% \formbytotal{totalchapter}{глав}{ы}{}{},
+% заключения и
+% \formbytotal{totalappendix}{приложен}{ия}{ий}{}.
+%% на случай ошибок оставляю исходный кусок на месте, закомментированным
+%Полный объём диссертации составляет  \ref*{TotPages}~страницу
+%с~\totalfigures{}~рисунками и~\totaltables{}~таблицами. Список литературы
+%содержит \total{citenum}~наименований.
+%
+
+{\acknowledge}
+\input{common/acknowledgement}
+
+Полный объём диссертации составляет \fixme{XXX} страниц с \fixme{XXX} рисунками
+и \fixme{XXX} таблицами. Список литературы содержит  \fixme{XXX} наименований.
+
 
 \pdfbookmark{Содержание работы}{description}                          % Закладка pdf
 \section*{Содержание работы}
@@ -75,11 +95,11 @@
 В \underline{\textbf{заключении}} приведены основные результаты работы, которые заключаются в следующем:
 \input{common/concl}
 
-\pdfbookmark{Литература}{bibliography}                                % Закладка pdf
+                              % Закладка pdf
 При использовании пакета \verb!biblatex! список публикаций автора по теме
-диссертации формируется в разделе <<\publications>>\ файла
+диссертации формируется в разделе <<Публикации>>\ файла
 \verb!common/characteristic.tex!  при помощи команды \verb!\nocite!
-
+\pdfbookmark{Публикации автора по теме диссертации}{authorbibliography}  
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{} % не рекомендуется применять пакет микротипографики к автоматически генерируемому списку литературы
 \urlstyle{rm}                               % ссылки URL обычным шрифтом
 \ifnumequal{\value{bibliosel}}{0}{% Встроенная реализация с загрузкой файла через движок bibtex8
@@ -93,29 +113,39 @@
   %  * Если не соблюдать порядок "как для \printbibliography", нумерация в `\insertbiblioauthor` будет кривой.
   %  * Если цитировать каждый источник отдельной командой --- найти некоторые ошибки будет проще.
   %
+  \nocite{
+        %high impact in right order (do not remove or change)
+        %64 статьи и тезисы + 2 диссертации (тут не учитываются)
+        %VAK изданий 56, не вак 8, тезисов 17, статей 47
+        %NB no of these should appear in othercites.bib (!) - they will then disappear from author list of papers
+       armeev_linking_2019,hada_histone_2019,shaytan_structural_2018,shaytan_hydroxyl-radical_2017,xiao_molecular_2017,draizen_histonedb_2016,el_kennani_ms_histonedb_2017,shaytan_coupling_2016,valieva_large-scale_2016,gaykalova_structural_2015,frank_direct_2015,nishi_physicochemical_2014,yolamanova_peptide_2013,shaytan_self-assembling_2011,shaytan_self-organizing_2011,shaytan_large-scale_2010,shaytan_free_2010,shaytan_solvent_2009,kasimova_voltage-gated_2014,chang_analysis_2014,sokolova_genome_2014,%=======
+          armeev_analyzing_2019,armeev_conformational_2015,armeev_integrative_2020,armeev_linking_2019,armeev_modeling_2016,armeev_molecular_2015,armeev_nucleosome_2016,armeev_python_2019,bass_effect_2019,biswas_genomic_2016,bozdaganyan_comparative_2014,chang_analysis_2014,chang_pausing_2013,chang_structural_2013,chertkov_dual_2017,draizen_histonedb_2016,el_kennani_ms_histonedb_2017,frank_direct_2015,gaykalova_structural_2015,goncearenco_structural_2015,gorkovets_joint_2018,gorkovets_mutual_2018,gribkova_construction_2019,gribkova_investigation_2017,hada_histone_2019,kasimova_investigation_2014,kasimova_molecular_2014,kasimova_voltage-gated_2014,levtsova_molecular_2009,lyubitelev_structure_2016,nikolaev_dynamics_2010,nikolaev_vzaimodeistvie_2010,nishi_physicochemical_2014,orekhov_calculation_2012,shaitan_dynamics_2016,shaitan_influence_2013,shaytan_combined_2015,shaytan_coupling_2016,shaytan_free_2010,shaytan_hydroxyl-radical_2017,shaytan_large-scale_2010,shaytan_microsecond_2017,shaytan_molekularnaya_2005,shaytan_neravnovesnaya_2006,shaytan_nucleosome_2015,shaytan_nucleosome_2016,shaytan_polymorphism_2015,shaytan_self-assembling_2011,shaytan_self-organizing_2011,shaytan_solvent_2009,shaytan_structural_2018,shaytan_trajectories_2016,sokolova_genome_2014,valieva_large-scale_2016,xiao_molecular_2017,yolamanova_peptide_2013,%далее диссертации
+          shaytan_thesis_kfmn_2010,shaytan_thesis_ulm_2012,%не вак
+          armeev_abstract_2019,armeev_modelirovanie_2013,bass_abstract_2019,greshnova_sinteticheskaya_2019,shaytan_dinamicheskiy_2006,shaytan_peptide_2006,shaytan_supercomputernoe_2009,shaytan_water_2014}
+
   %% authorvak
-  \nocite{vakbib1}%
-  \nocite{vakbib2}%
+  %\nocite{vakbib1}%
+ % \nocite{vakbib2}%
   %
   %% authorwos
-  \nocite{wosbib1}%
+ % \nocite{wosbib1}%
   %
   %% authorscopus
-  \nocite{scbib1}%
+ % \nocite{scbib1}%
   %
   %% authorpathent
-  \nocite{patbib1}%
+  %\nocite{patbib1}%
   %
   %% authorprogram
-  \nocite{progbib1}%
+  %\nocite{progbib1}%
   %
   %% authorconf
-  \nocite{confbib1}%
-  \nocite{confbib2}%
+  %\nocite{confbib1}%
+ % \nocite{confbib2}%
   %
   %% authorother
-  \nocite{bib1}%
-  \nocite{bib2}%
+  %\nocite{bib1}%
+  %\nocite{bib2}%
 
   \ifnumgreater{\value{usefootcite}}{0}{
     \begin{refcontext}[labelprefix={}]
@@ -142,6 +172,7 @@
     \fi
   \fi
   %  \insertbiblioauthorimportant  % Вывод наиболее значимых работ автора (определяется в файле characteristic во второй section)
+  \pdfbookmark{Список литературы}{bibliography}
   \begin{refcontext}[labelprefix={}]
       \insertbiblioexternal            % Вывод списка литературы, на которую ссылались в тексте автореферата
   \end{refcontext}
