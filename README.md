@@ -19,6 +19,12 @@ LaTeX-шаблон/пример для русской кандидатской/�
 `make synopsis`
 
 
+Для больших проектов начинает не хватать памяти.
+sudo vim /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf 
+Change the value main_memory to higher value
+Run fmutil helper script:
+sudo fmtutil-sys --all
+
 ## Особенности
 * Кодировка: UTF-8.
 * Стандарт: ГОСТ Р 7.0.11-2011.
