@@ -20,7 +20,7 @@ LaTeX-шаблон/пример для русской кандидатской/�
 
 
 Для больших проектов начинает не хватать памяти.
-sudo vim /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf 
+sudo vim /usr/local/texlive/2020/texmf.cnf 
 Change the value main_memory to higher value
 Run fmutil helper script:
 sudo fmtutil-sys --all
